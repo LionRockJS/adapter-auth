@@ -3,26 +3,14 @@
   "name": "@lionrockjs/adapter-auth-password",
   "version": "0.0.8",
   "description": "The Sign In with password Module for LionRockJS",
-  "main": "index.js",
+  "main": "classes/index.js",
+  "types": "types/index.d.ts",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "node --experimental-vm-modules ../../../node_modules/jest/bin/jest.js --coverage"
-  },
-  "jest": {
-    "verbose": true,
-    "transform": {},
-    "testMatch": [
-      "**/__tests__/**/*.[jt]s?(x)",
-      "**/?(*.)+(spec|test).[jt]s?(x)",
-      "**/?(*.)+(spec|test).mjs"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "mjs"
-    ]
+    "build": "tsc",
+    "watch": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -39,5 +27,9 @@
   "homepage": "https://github.com/LionRockJS/adapter-auth#readme",
   "dependencies": {
     "argon2": "^0.41.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.5"
   }
 }
