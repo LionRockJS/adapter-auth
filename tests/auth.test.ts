@@ -2,8 +2,8 @@ import path from "node:path";
 import fs from "node:fs";
 import url from "node:url";
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url)).replace(/\/$/, '');
-
-import { Controller, Central, Model, ORM, ControllerMixinDatabase } from '@lionrockjs/central';
+import { Controller, Model } from "@lionrockjs/mvc";
+import { Central, ORM, ControllerMixinDatabase } from '@lionrockjs/central';
 import ModelIdentifierPassword from "../classes/model/IdentifierPassword.mjs";
 
 import ModAuth, { ControllerRegister, ControllerAuth, ControllerAccount, ModelRole, ModelUser } from '@lionrockjs/mod-auth';

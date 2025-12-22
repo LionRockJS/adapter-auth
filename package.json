@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@lionrockjs/adapter-auth-password",
-  "version": "0.0.8",
+  "version": "2.0.0",
   "description": "The Sign In with password Module for LionRockJS",
   "main": "classes/index.js",
   "types": "types/index.d.ts",
@@ -9,8 +9,9 @@
     "test": "tests"
   },
   "scripts": {
+    "test": "bun test",
     "build": "tsc",
-    "watch": "tsc -w"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",

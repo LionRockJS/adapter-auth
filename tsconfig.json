@@ -1,24 +1,23 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "node",
-    "outDir": "classes",
-    "rootDir": "src",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "declaration": true,
-    "declarationDir": "types",
+    "outDir": "./classes",
+    "declarationDir": "./types",
     "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
-    "preserveSymlinks": true,
-    "baseUrl": ".",
-    "paths": {
-      "@lionrockjs/mvc": ["../../../system/mvc/types/index.d.ts"],
-      "@lionrockjs/central": ["../../../system/central/types/index.d.ts"],
-      "@lionrockjs/mixin-form": ["../../../release/mixins/form/types/index.d.ts"]
-    }
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.mts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "types"
+  ]
 }
