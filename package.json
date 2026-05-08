@@ -3,7 +3,7 @@
   "name": "@lionrockjs/adapter-auth-password",
   "version": "2.0.0",
   "description": "The Sign In with password Module for LionRockJS",
-  "main": "classes/index.js",
+  "main": "dist/index.js",
   "types": "types/index.d.ts",
   "directories": {
     "test": "tests"
