@@ -19,7 +19,7 @@ export default class IdentifierPassword extends Identifier {
         };
     }
     static async loginFilter(identifier, postData, state) {
-        const salt = Central.adapter.process().env.AUTH_SALT;
+        const salt = Central.runtime.process().env.AUTH_SALT;
         const plainTextPassword = postData.password;
         const text = identifier.user_id + identifier.name + plainTextPassword + salt;
         if (await argon2.verify(identifier.hash, text) === false)
@@ -34,7 +34,7 @@ export default class IdentifierPassword extends Identifier {
         }
     }
     static async hash(userId, identifierName, plainTextPassword) {
-        const salt = Central.adapter.process().env.AUTH_SALT;
+        const salt = Central.runtime.process().env.AUTH_SALT;
         const digest = await argon2.hash(userId + identifierName + plainTextPassword + salt);
         return `${digest}`;
     }

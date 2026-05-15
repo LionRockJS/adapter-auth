@@ -4,7 +4,11 @@ import IdentifierPassword from './identifier/Password.mjs';
 import ModelIdentifierPassword from './model/IdentifierPassword.mjs';
 declare const _default: {
     filename: string;
-    configs: string[];
+    configs: {
+        auth: {
+            identifiers: any[];
+        };
+    };
 };
 export default _default;
 export { ControllerAccountPassword, ControllerMixinAccountPassword, IdentifierPassword, ModelIdentifierPassword, };
