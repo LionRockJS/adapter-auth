@@ -2,6 +2,7 @@ import ControllerAccountPassword from './controller/AccountPassword.mjs';
 import ControllerMixinAccountPassword from './controller-mixin/AccountPassword.mjs';
 import IdentifierPassword from './identifier/Password.mjs';
 import ModelIdentifierPassword from './model/IdentifierPassword.mjs';
+import routes from './routes.mjs';
 declare const _default: {
     filename: string;
     configs: {
@@ -11,4 +12,4 @@ declare const _default: {
     };
 };
 export default _default;
-export { ControllerAccountPassword, ControllerMixinAccountPassword, IdentifierPassword, ModelIdentifierPassword, };
+export { ControllerAccountPassword, ControllerMixinAccountPassword, IdentifierPassword, ModelIdentifierPassword, routes };

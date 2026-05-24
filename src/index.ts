@@ -5,6 +5,8 @@ import ModelIdentifierPassword from './model/IdentifierPassword.mjs';
 
 import ConfigAuth from './config/auth.mjs';
 
+import routes from './routes.mjs';
+
 export default {
   filename: import.meta.url,
   configs: {
@@ -17,4 +19,5 @@ export {
   ControllerMixinAccountPassword,
   IdentifierPassword,
   ModelIdentifierPassword,
+  routes
 };
