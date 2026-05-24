@@ -42,7 +42,7 @@ export default class ControllerMixinAccountPassword extends ControllerMixin {
         }));
         //update identifier record
         await Promise.all(identifierInstances.map(async (it) => {
-            it.hash = await Identifier.hash(user_id, it.name, newPassword);
+            it.hash = await Identifier.hash(user_id, it.name, newPassword, state);
             await it.write();
         }));
         await HelperAuth.redirect(state, '/account/password/changed');

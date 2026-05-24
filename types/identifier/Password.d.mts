@@ -8,5 +8,5 @@ export default class IdentifierPassword extends Identifier {
     }>;
     static loginFilter(identifier: any, postData: any, state: any): Promise<{}>;
     static matchRetypePassword(password: string, retypePassword?: string): void;
-    static hash(userId: string, identifierName: string, plainTextPassword: string): Promise<string>;
+    static hash(userId: string, identifierName: string, plainTextPassword: string, state?: Map<string, any>): Promise<string>;
 }
