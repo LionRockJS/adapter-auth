@@ -1,34 +1,18 @@
-import { argon2id, argon2Verify } from 'hash-wasm';
+import IdentifierPassword from "../dist/identifier/Password.mjs";
 
 describe('test argon2', ()=>{
   test('hash', async()=>{
-    const text = "hello world";
-    const hash = await argon2id({
-      password: text,
-      salt: crypto.getRandomValues(new Uint8Array(16)),
-      parallelism: 1,
-      iterations: 2,
-      memorySize: 19456,
-      hashLength: 32,
-      outputType: 'encoded',
-    });
+    const hash = await IdentifierPassword.hash('1', 'alice', 'hello world');
     expect(hash).toBeDefined();
     expect(typeof hash).toBe('string');
+    expect(hash.startsWith('$argon2id$v=19$m=19456,t=2,p=1$')).toBe(true);
   })
 
   test('verify', async()=>{
-    const text = "hello world";
-    const hash = await argon2id({
-      password: text,
-      salt: crypto.getRandomValues(new Uint8Array(16)),
-      parallelism: 1,
-      iterations: 2,
-      memorySize: 19456,
-      hashLength: 32,
-      outputType: 'encoded',
-    });
+    const hash = await IdentifierPassword.hash('1', 'alice', 'hello world');
+    const identifier = { hash, user_id: '1', name: 'alice' };
 
-    const result = await argon2Verify({hash, password: text});
-    expect(result).toBe(true);
+    await expect(IdentifierPassword.loginFilter(identifier, {password: 'hello world'})).resolves.toEqual({});
+    await expect(IdentifierPassword.loginFilter(identifier, {password: 'goodbye'})).rejects.toThrow('Password Mismatch');
   })
 })
